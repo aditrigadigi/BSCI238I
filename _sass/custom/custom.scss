@@ -7,6 +7,57 @@
 @import 'schedule';
 @import 'staffer';
 
+// ============================================
+// SINGLE-PAGE LAYOUT CUSTOMIZATIONS
+// ============================================
+
+// Hide the left sidebar completely
+.side-bar {
+  display: none !important;
+}
+
+// Expand main content to full width
+.main-wrapper {
+  width: 100% !important;
+}
+
+.main-content {
+  max-width: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+// Make the site header with navigation sticky
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+// Style the aux_links navigation as top bar
+.site-header {
+  .aux-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+    
+    a {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}
+
 // Overrides
 code {
   font-size: 14px;
@@ -46,6 +97,98 @@ summary {
   dd {
     + dt {
       margin-top: 1em;
+    }
+  }
+}
+
+// Single-page layout enhancements
+html {
+  scroll-behavior: smooth;
+}
+
+// Section styling for single-page layout
+section {
+  scroll-margin-top: 120px;
+  
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+#home {
+  margin-bottom: 2rem;
+  
+  img {
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+}
+
+#instructors {
+  .staffer-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+#projects {
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .project-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #e8e8e8;
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+      
+      h4 {
+        margin: 0 0 0.5rem 0;
+      }
+      
+      p {
+        margin: 0 0 1rem 0;
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
     }
   }
 }

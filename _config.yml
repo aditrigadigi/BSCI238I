@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "BSCI238I: Machine Learning for Life Sciences"
+title: "BSCI238I"
 tagline: "Spring 2026 | University of Maryland, College Park"
 description: "A modern, highly customizable, responsive Jekyll template for course websites"
 author: "Aditri Gadigi and Anushka Poddar"
@@ -28,12 +28,11 @@ search_enabled: true
 heading_anchors: true
 permalink: pretty
 aux_links:
-  Aditri Gadigi:
-    - 'www.google.com'
-  Anushka Poddar:
-    - 'www.google.com'
-  Canvas:
-    - 'https://github.com/kevinlin1/just-the-class'
+  "Home": "#home"
+  "Schedule": "#schedule"
+  "Syllabus": "#syllabus"
+  "Instructors": "#instructors"
+  "Student Projects": "#projects"
 footer_content:
 
 # Collections for website data
