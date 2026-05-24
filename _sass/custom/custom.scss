@@ -243,3 +243,27 @@ body,
 html {
   overflow-x: hidden !important;
 }
+
+/* Override the theme's internal layout width variables globally */
+:root {
+  --content-max-width: 100% !important;
+  --nav-width: 0px !important;
+}
+
+/* Force the explicit theme container to stretch and use uniform margins */
+#main-content, .main-content, .main-content-wrap {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 6% !important;
+  padding-right: 6% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure the banner image explicitly honors the full container span */
+#main-content img, .main-content img {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+}
