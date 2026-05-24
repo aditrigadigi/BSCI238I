@@ -21,21 +21,44 @@
   width: 100% !important;
 }
 
-.main-content {
-  max-width: none;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 2rem;
-  padding-right: 2rem;
+.main-content-wrap,
+.main-content,
+main,
+.main {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.main-content-wrap, main {
+  padding-left: 6% !important;
+  padding-right: 6% !important;
+  max-width: 100% !important;
+}
+
+.page-wrapper,
+.wrapper {
+  padding-left: 0 !important;
 }
 
 // Make the site header with navigation sticky
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.site-header,
+.main-header,
+.site-nav-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 10px 2rem !important;
+  background-color: #ffffff !important;
+  z-index: 9999 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+.main,
+.main-content {
+  margin-top: 70px !important;
 }
 
 // Style the aux_links navigation as top bar
@@ -191,4 +214,32 @@ section {
       }
     }
   }
+}
+
+/* 1. Reset all potential theme parent containers to eliminate the left-side void */
+.page-wrapper,
+.main,
+.main-content,
+.main-content-wrap,
+#main-content,
+main {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  left: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 2. Set an elegant, perfectly symmetric inner margin to frame your course calendar nicely */
+.main-content-wrap,
+main {
+  padding-left: 6% !important;
+  padding-right: 6% !important;
+}
+
+/* 3. Ensure the main content layout doesn't trigger an accidental horizontal window scrollbar */
+body,
+html {
+  overflow-x: hidden !important;
 }
