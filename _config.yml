@@ -29,7 +29,6 @@ heading_anchors: true
 permalink: pretty
 aux_links:
   "Home": "#home"
-  "Schedule": "#schedule"
   "Syllabus": "#syllabus"
   "Instructors": "#instructors"
   "Student Projects": "#projects"

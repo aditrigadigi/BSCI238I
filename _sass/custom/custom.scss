@@ -58,7 +58,7 @@ main,
 
 .main,
 .main-content {
-  margin-top: 70px !important;
+  margin-top: 25px !important;
 }
 
 // Style the aux_links navigation as top bar
@@ -98,7 +98,6 @@ details {
 
 summary {
   @extend .btn, .btn-outline;
-
   width: 100%;
 }
 
@@ -261,9 +260,249 @@ html {
   box-sizing: border-box !important;
 }
 
-/* Ensure the banner image explicitly honors the full container span */
+/* Ensure the banner image explicitly honors the container span and scales beautifully */
 #main-content img, .main-content img {
-  max-width: 100% !important;
-  width: 100% !important;
-  height: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important; 
+    border-radius: 8px !important; 
 }
+
+/* Newly added */
+
+/* ============================================
+   1. NAVIGATION HEADER TYPOGRAPHY & COLOR SWAPS
+   ============================================ */
+
+/* Left Branding Title: Set to Geometric Roboto and Banner Charcoal */
+.nav-branding-title {
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
+    letter-spacing: 0.01em !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    color: #2d2d2d !important; 
+    background-color: transparent !important;
+    margin-right: auto !important; 
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+}
+.nav-branding-title:hover {
+    background-color: #f5f5f5 !important;
+    color: #000000 !important;
+}
+
+/* Right-side Nav Links: Swap from default to warm Banner Illustration Brick Red */
+.site-header .aux-nav a,
+.main-header .aux-nav a,
+.site-header .aux-nav .site-button,
+.main-header .aux-nav .site-button,
+.aux-nav-list-item a {
+    color: #c6513e !important; 
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    border: none !important; 
+    background: transparent !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease !important;
+}
+.site-header .aux-nav a:hover,
+.main-header .aux-nav a:hover,
+.site-header .aux-nav .site-button:hover,
+.main-header .aux-nav .site-button:hover,
+.aux-nav-list-item a:hover {
+    background-color: #fdf5f4 !important; 
+    color: #a03625 !important;
+    border: none !important;
+}
+
+/* Ensure perfect alignment across the top layout rail */
+.main-header, .site-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+/* ============================================
+   2. UNCONDITIONAL BLUE CONVERSION FOR CONTENT LINKS
+   ============================================ */
+
+/* Force all inline content links and calendar matrix text items to turn Blueprint Blue */
+.main-content a,
+.main-content td a,
+.table-wrapper td a,
+td a,
+p a {
+    color: #317b91 !important; 
+    text-decoration: none !important;
+}
+.main-content a:hover,
+.main-content td a:hover,
+td a:hover,
+p a:hover {
+    color: #215666 !important;
+    text-decoration: underline !important;
+}
+
+/* ============================================
+   3. STRUCTURAL BUTTON LAYOUT CARDS & BADGES
+   ============================================ */
+
+/* Force solid blue background fields for buttons with crisp, readable white text */
+a.btn,
+.main-content .btn,
+#projects .project-card a,
+#instructors .staffer-card a:not([href^="mailto:"]),
+.btn-blueprint,
+a.btn-blueprint,
+.main-content a.btn-blueprint {
+    background-color: #317b91 !important;
+    color: #ffffff !important; 
+    border: 1px solid #317b91 !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    box-shadow: none !important;
+}
+
+/* Base Link States (Blueprint Blue) */
+a.btn-blueprint:link, 
+a.btn-blueprint:visited {
+    background-color: #317b91 !important;
+    border-color: #317b91 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Active Interaction States (Deep Midnight Blue Hover Shift) */
+a.btn:hover,
+.main-content .btn:hover,
+#projects .project-card a:hover,
+#instructors .staffer-card a:not([href^="mailto:"]):hover,
+.btn-blueprint:hover,
+a.btn-blueprint:hover,
+.main-content a.btn-blueprint:hover,
+a.btn-blueprint:focus,
+a.btn-blueprint:active {
+    background-color: #215666 !important;
+    border-color: #215666 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Discard card block properties for raw text email hyperlinks in profile frames */
+#instructors .staffer-card p a {
+    background: transparent !important;
+    color: #317b91 !important;
+    padding: 0 !important;
+    display: inline !important;
+    border: none !important;
+}
+
+/* Target purple schedule milestone pills (SECTION and LAB) explicitly */
+.main-content .badge,
+.main-content span.badge,
+.badge-purple,
+[class*="badge-purple"],
+span.badge[class*="purple"] {
+    background-color: #317b91 !important;
+    color: #ffffff !important;
+}
+
+/* Protect the deadline warnings to keep them an intentional alert red */
+.badge-red, [class*="badge-red"] {
+    background-color: #c6513e !important;
+    color: #ffffff !important;
+}
+
+/* ============================================
+   4. FINAL PRECISION COLOR LOCK: SYLLABUS & LABELS
+   ============================================ */
+
+/* Force the explicit 'btn-purple' framework class to stay brand blue on idle, link, visited, hover, and focus */
+.main-content .btn-purple,
+.btn-purple,
+a.btn-purple,
+a.btn-purple:link,
+a.btn-purple:visited {
+    background-color: #317b91 !important;
+    color: #ffffff !important;
+    border-color: #317b91 !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+.main-content .btn-purple:hover,
+.btn-purple:hover,
+a.btn-purple:hover,
+a.btn-purple:focus,
+a.btn-purple:active {
+    background-color: #215666 !important;
+    border-color: #215666 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Force the explicit 'label-purple' strong HTML elements to use brand blue */
+strong.label-purple,
+.label-purple,
+[class*="label-purple"],
+.main-content strong.label-purple {
+    background-color: #317b91 !important;
+    color: #ffffff !important;
+    padding: 0.22em 0.5em !important;
+    border-radius: 3px !important;
+}
+
+/* Force the template's custom red labels to match our warm illustration brick red */
+strong.label-red,
+.label-red,
+[class*="label-red"],
+.main-content strong.label-red {
+    background-color: #c6513e !important;
+    color: #ffffff !important;
+    padding: 0.22em 0.5em !important;
+    border-radius: 3px !important;
+}
+/*
+// ============================================
+// GLOBAL FONT OVERRIDE: ROBOTO
+// ============================================
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --font-family: 'Roboto', system-ui, -apple-system, sans-serif !important;
+}
+
+body, html, p, a, h1, h2, h3, h4, h5, h6, li, td, th, span, div, input, button {
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif !important;
+}
+
+// ============================================
+// GLOBAL TYPOGRAPHY COLOR LOCK: DEEP CHARCOAL
+// ============================================
+
+body, html, p, li, td, th, div, span:not([class*="label"]):not([class*="badge"]):not([class*="btn"]) {
+  color: #2f2f2f !important;
+}
+
+// Protect section headings to ensure they keep their crisp rendering structure
+h1, h2, h3, h4, h5, h6 {
+  color: #2f2f2f !important;
+}
+  */
+
+  // ============================================
+// ADJUST ONLY THE GRADING TABLE COLUMN WIDTHS
+// ============================================
