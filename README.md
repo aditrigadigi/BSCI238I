@@ -16,8 +16,7 @@ seo:
 
 Machine learning is transforming the life sciences, enabling breakthroughs in fields such as genomics, medical imaging, and drug discovery. This course introduces students to the fundamental principles of machine learning and its applications in biology and medicine. Students will learn about key machine learning techniques, including classification, regression, clustering, and deep learning, with a focus on practical applications like cancer diagnosis, gene expression analysis, and protein structure prediction. Through lectures and guided projects, students will gain an understanding of how to apply machine learning models to biological datasets, evaluate their performance, and interpret results. No prior programming or machine learning experience is required—this course is designed to bridge the gap between computational techniques and life science research, preparing biology students to understand and leverage machine learning as a tool as they encounter real-world challenges in their fields of study.
 
-<span style="color: #317b91;">**Th 3:30-4:20 @ ESJ B0322**</span>
-
+<span style="color: #543290;"><strong>Th 3:30-4:20 @ ESJ B0322</strong></span>
 </section>
 
 ---
@@ -78,62 +77,51 @@ Machine learning is transforming the life sciences, enabling breakthroughs in fi
 
 View final projects made by past students!
 
+<style>
+  .animated-project-card {
+    cursor: pointer;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+  }
+
+  .animated-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .project-card-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+</style>
+
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+{% for project in site.data.projects %}
+  <div class="animated-project-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem;" onclick="window.open('{{ project.link | relative_url }}', '_blank')">
+    <div>
+      <div style="font-family: inherit !important; font-size: 1.00rem !important; font-weight: 600 !important; line-height: 1.3 !important; color: #2f2f2f !important; margin: 0 0 0.6rem 0 !important; text-transform: none !important; letter-spacing: normal !important;">
+        {{ project.title }}
+      </div>
+      
+      {% if project.authors != "" and project.authors != nil %}
+      <div style="margin: 0 0 0.15rem 0; color: #333; font-size: 0.95rem; font-weight: 400;">{{ project.authors }}</div>
+      {% endif %}
 
-<div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <img src="/assets/images/placeholder-project-1.jpg" alt="Project 1" style="width: 100%; height: 200px; object-fit: cover; background-color: #e8e8e8;">
-  <div style="padding: 1.5rem;">
-    <h4 style="margin: 0 0 0.5rem 0;"><strong>Protein Structure Prediction</strong></h4>
-    <p style="margin: 0 0 1rem 0; color: #555; font-size: 0.95rem;">Developed a deep learning model to predict secondary protein structures from amino acid sequences. Achieved 89% accuracy on test dataset using CNN architecture.</p>
-    <a href="#" class="btn btn-outline" style="display: inline-block; padding: 0.4rem 1rem; font-size: 0.9rem;">View Project →</a>
+      <p style="margin: 0 0 1.25rem 0; color: #666; font-size: 0.9rem;">{{ project.description }}</p>
+    </div>
+
+    <div style="margin-top: auto;">
+      <button class="btn btn-outline project-card-button" type="button" onclick="event.stopPropagation(); window.open('{{ project.link | relative_url }}', '_blank')">View Project →</button>
+    </div>
   </div>
-</div>
-
-<div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <img src="/assets/images/placeholder-project-2.jpg" alt="Project 2" style="width: 100%; height: 200px; object-fit: cover; background-color: #e8e8e8;">
-  <div style="padding: 1.5rem;">
-    <h4 style="margin: 0 0 0.5rem 0;"><strong>Gene Expression Classification</strong></h4>
-    <p style="margin: 0 0 1rem 0; color: #555; font-size: 0.95rem;">Built a random forest classifier to identify disease subtypes from gene expression data. Performed feature selection on 20,000+ genes to improve model interpretability.</p>
-    <a href="#" class="btn btn-outline" style="display: inline-block; padding: 0.4rem 1rem; font-size: 0.9rem;">View Project →</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <img src="/assets/images/placeholder-project-3.jpg" alt="Project 3" style="width: 100%; height: 200px; object-fit: cover; background-color: #e8e8e8;">
-  <div style="padding: 1.5rem;">
-    <h4 style="margin: 0 0 0.5rem 0;"><strong>Drug Discovery Pipeline</strong></h4>
-    <p style="margin: 0 0 1rem 0; color: #555; font-size: 0.95rem;">Created an automated ML pipeline for predicting drug-protein binding affinities. Implemented hyperparameter tuning and cross-validation to optimize model performance.</p>
-    <a href="#" class="btn btn-outline" style="display: inline-block; padding: 0.4rem 1rem; font-size: 0.9rem;">View Project →</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <img src="/assets/images/placeholder-project-4.jpg" alt="Project 4" style="width: 100%; height: 200px; object-fit: cover; background-color: #e8e8e8;">
-  <div style="padding: 1.5rem;">
-    <h4 style="margin: 0 0 0.5rem 0;"><strong>Metagenomic Binning</strong></h4>
-    <p style="margin: 0 0 1rem 0; color: #555; font-size: 0.95rem;">Clustered microbial DNA sequences into species using unsupervised learning. Compared k-means, hierarchical clustering, and DBSCAN for optimal taxonomic resolution.</p>
-    <a href="#" class="btn btn-outline" style="display: inline-block; padding: 0.4rem 1rem; font-size: 0.9rem;">View Project →</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <img src="/assets/images/placeholder-project-5.jpg" alt="Project 5" style="width: 100%; height: 200px; object-fit: cover; background-color: #e8e8e8;">
-  <div style="padding: 1.5rem;">
-    <h4 style="margin: 0 0 0.5rem 0;"><strong>ECG Anomaly Detection</strong></h4>
-    <p style="margin: 0 0 1rem 0; color: #555; font-size: 0.95rem;">Trained autoencoders to detect abnormal cardiac rhythms from ECG time series data. Achieved 94% sensitivity in identifying arrhythmias with minimal false positives.</p>
-    <a href="#" class="btn btn-outline" style="display: inline-block; padding: 0.4rem 1rem; font-size: 0.9rem;">View Project →</a>
-  </div>
-</div>
-
-<div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <img src="/assets/images/placeholder-project-6.jpg" alt="Project 6" style="width: 100%; height: 200px; object-fit: cover; background-color: #e8e8e8;">
-  <div style="padding: 1.5rem;">
-    <h4 style="margin: 0 0 0.5rem 0;"><strong>Imaging Segmentation</strong></h4>
-    <p style="margin: 0 0 1rem 0; color: #555; font-size: 0.95rem;">Built a U-Net deep learning model for automated cell segmentation in microscopy images. Achieved Dice coefficient of 0.92 on validation set.</p>
-    <a href="#" class="btn btn-outline" style="display: inline-block; padding: 0.4rem 1rem; font-size: 0.9rem;">View Project →</a>
-  </div>
-</div>
-
+{% endfor %}
 </div>
 
 </section>
