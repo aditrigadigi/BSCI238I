@@ -40,29 +40,28 @@ Machine learning is transforming the life sciences, enabling breakthroughs in fi
 </section>
 
 ---
-
 <section id="instructors" markdown="1">
 
 ## Instructors
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+<div class="instructor-grid">
 
-  <div style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 1.5rem; text-align: center; background-color: #fafafa;">
-    <h3 style="margin: 0.5rem 0;">Aditri Gadigi</h3>
-    <p style="color: #666; margin: 0.25rem 0; font-size: 0.95rem;"><strong>Course Facilitator</strong></p>
-    <p style="margin: 0.5rem 0;"><a href="mailto:agadigi@terpmail.umd.edu">agadigi@terpmail.umd.edu</a></p>
+  <div class="instructor-card">
+    <h3 class="instructor-card-title">Aditri Gadigi</h3>
+    <p class="instructor-card-role">Course Facilitator</p>
+    <p class="instructor-card-email"><a href="mailto:agadigi@terpmail.umd.edu">agadigi@terpmail.umd.edu</a></p>
   </div>
 
-  <div style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 1.5rem; text-align: center; background-color: #fafafa;">
-    <h3 style="margin: 0.5rem 0;">Anushka Poddar</h3>
-    <p style="color: #666; margin: 0.25rem 0; font-size: 0.95rem;"><strong>Course Facilitator</strong></p>
-    <p style="margin: 0.5rem 0;"><a href="mailto:apoddar2@terpmail.umd.edu">apoddar2@terpmail.umd.edu</a></p>
+  <div class="instructor-card">
+    <h3 class="instructor-card-title">Anushka Poddar</h3>
+    <p class="instructor-card-role">Course Facilitator</p>
+    <p class="instructor-card-email"><a href="mailto:apoddar2@terpmail.umd.edu">apoddar2@terpmail.umd.edu</a></p>
   </div>
 
-  <div style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 1.5rem; text-align: center; background-color: #fafafa;">
-    <h3 style="margin: 0.5rem 0;">Dr. Najib M. El-Sayed</h3>
-    <p style="color: #666; margin: 0.25rem 0; font-size: 0.95rem;"><strong>Faculty Advisor</strong></p>
-    <p style="margin: 0.5rem 0;"><a href="mailto:elsayed@umd.edu">elsayed@umd.edu</a></p>
+  <div class="instructor-card">
+    <h3 class="instructor-card-title">Dr. Najib M. El-Sayed</h3>
+    <p class="instructor-card-role">Faculty Advisor</p>
+    <p class="instructor-card-email"><a href="mailto:elsayed@umd.edu">elsayed@umd.edu</a></p>
   </div>
 
 </div>
@@ -77,51 +76,89 @@ Machine learning is transforming the life sciences, enabling breakthroughs in fi
 
 View final projects made by past students!
 
-<style>
-  .animated-project-card {
-    cursor: pointer;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    height: 100%;
-  }
+<!-- Semester Filter Toggle Buttons (Active Gold by Default) -->
+<div class="semester-filter-controls">
+  <button type="button" class="sem-toggle-btn active-sem" data-sem="fall-2025">
+    Fall 2025
+  </button>
+  <button type="button" class="sem-toggle-btn active-sem" data-sem="spring-2026">
+    Spring 2026
+  </button>
+</div>
 
-  .animated-project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  }
-
-  .project-card-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-  }
-</style>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-{% for project in site.data.projects %}
-  <div class="animated-project-card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem;" onclick="window.open('{{ project.link | relative_url }}', '_blank')">
+<!-- Project Cards Grid -->
+<div class="projects-grid">
+  {% for project in site.data.projects %}
+  <div class="animated-project-card" data-semester="{{ project.semester }}">
+    
     <div>
-      <div style="font-family: inherit !important; font-size: 1.00rem !important; font-weight: 600 !important; line-height: 1.3 !important; color: #2f2f2f !important; margin: 0 0 0.6rem 0 !important; text-transform: none !important; letter-spacing: normal !important;">
+      <div class="project-card-title">
         {{ project.title }}
       </div>
-      
-      {% if project.authors != "" and project.authors != nil %}
-      <div style="margin: 0 0 0.15rem 0; color: #333; font-size: 0.95rem; font-weight: 400;">{{ project.authors }}</div>
+      <p class="project-card-desc">
+        {{ project.description }}
+      </p>
+    </div>
+
+    <div>
+      {% if project.type == "paper" %}
+        <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-paper">
+          View Paper &rarr;
+        </a>
+      {% else %}
+        <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-project">
+          View Project &rarr;
+        </a>
       {% endif %}
-
-      <p style="margin: 0 0 1.25rem 0; color: #666; font-size: 0.9rem;">{{ project.description }}</p>
     </div>
 
-    <div style="margin-top: auto;">
-      <button class="btn btn-outline project-card-button" type="button" onclick="event.stopPropagation(); window.open('{{ project.link | relative_url }}', '_blank')">View Project →</button>
-    </div>
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
 
 </section>
+
+<script>
+  (function() {
+    function setupSemesterFilter() {
+      const buttons = document.querySelectorAll('.sem-toggle-btn');
+      const cards = document.querySelectorAll('.animated-project-card');
+      const activeSemesters = new Set(['fall-2025', 'spring-2026']);
+
+      function updateVisibility() {
+        cards.forEach(card => {
+          const cardSem = card.getAttribute('data-semester');
+          if (activeSemesters.has(cardSem)) {
+            card.style.setProperty('display', 'flex', 'important');
+          } else {
+            card.style.setProperty('display', 'none', 'important');
+          }
+        });
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const sem = this.getAttribute('data-sem');
+
+          if (activeSemesters.has(sem)) {
+            activeSemesters.delete(sem);
+            this.classList.remove('active-sem');
+          } else {
+            activeSemesters.add(sem);
+            this.classList.add('active-sem');
+          }
+          updateVisibility();
+        });
+      });
+
+      updateVisibility();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupSemesterFilter);
+    } else {
+      setupSemesterFilter();
+    }
+  })();
+</script>

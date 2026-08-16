@@ -10,18 +10,17 @@
 // ============================================
 // COLOR PALETTE DEFINITIONS (PURPLE + WARM GOLD)
 // ============================================
-$brand-purple: #543290;          // Balanced royal/indigo mid-purple
-$brand-purple-dark: #3E236E;     // Deeper shade for hover states
-$brand-purple-light: #673DAF;    // Brighter shade for active focus
-$brand-gold: #D97706;            // Warm Gold / Amber (Idle)
-$brand-gold-hover: #B45309;      // Deep Amber (Hover)
-$brand-gold-subtle: #FEF3C7;     // Soft Amber background tint
+$brand-purple: #543290;
+$brand-purple-dark: #3E236E;
+$brand-purple-light: #673DAF;
+$brand-gold: #D97706;
+$brand-gold-hover: #B45309;
+$brand-gold-subtle: #FEF3C7;
 $brand-charcoal: #2D2D2D;
 
 // ============================================
-// SINGLE-PAGE LAYOUT CUSTOMIZATIONS
+// GLOBAL LAYOUT / BASE RESETS
 // ============================================
-
 .side-bar {
   display: none !important;
 }
@@ -38,7 +37,8 @@ main,
   width: 100% !important;
 }
 
-.main-content-wrap, main {
+.main-content-wrap,
+main {
   padding-left: 6% !important;
   padding-right: 6% !important;
   max-width: 100% !important;
@@ -75,12 +75,12 @@ main,
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem 0;
-    
+
     a {
       padding: 0.5rem 1rem;
       border-radius: 4px;
       transition: all 0.2s ease;
-      
+
       &:hover {
         background-color: #f5f5f5;
       }
@@ -135,14 +135,14 @@ html {
 
 section {
   scroll-margin-top: 120px;
-  
+
   h2 {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #E6E1F0;
   }
-  
+
   h3 {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -151,7 +151,7 @@ section {
 
 #home {
   margin-bottom: 2rem;
-  
+
   img {
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -166,7 +166,7 @@ section {
     text-align: center;
     background: #fafafa;
     transition: all 0.3s ease;
-    
+
     &:hover {
       box-shadow: 0 6px 18px rgba(84, 50, 144, 0.15);
       transform: translateY(-2px);
@@ -198,7 +198,9 @@ html {
   --nav-width: 0px !important;
 }
 
-#main-content, .main-content, .main-content-wrap {
+#main-content,
+.main-content,
+.main-content-wrap {
   max-width: 100% !important;
   width: 100% !important;
   margin-left: 0 !important;
@@ -208,84 +210,473 @@ html {
   box-sizing: border-box !important;
 }
 
-#main-content img, .main-content img {
+#main-content img,
+.main-content img {
   max-width: 100% !important;
   width: 100% !important;
   height: auto !important;
-  object-fit: cover !important; 
-  border-radius: 8px !important; 
+  object-fit: cover !important;
+  border-radius: 8px !important;
 }
 
-/* ============================================
-   1. NAVIGATION HEADER TYPOGRAPHY & COLOR
-   ============================================ */
+// ============================================
+// FONT IMPORTS & TYPOGRAPHY
+// ============================================
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
-.nav-branding-title {
-  font-family: 'Roboto', system-ui, -apple-system, sans-serif !important;
+body,
+html,
+p,
+li,
+td,
+th,
+dl,
+dd,
+span,
+input,
+button {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  font-family: 'Lora', Georgia, serif !important;
   font-weight: 700 !important;
-  font-size: 1.05rem !important;
-  letter-spacing: 0.01em !important;
+  letter-spacing: -0.01em !important;
+}
+
+code,
+pre,
+kbd,
+samp,
+.badge,
+.label,
+strong.label,
+.main-content strong.label,
+.main-content .badge,
+.main-content span.badge,
+[class*="badge-"],
+[class*="label-"],
+.schedule-table th:first-child,
+.schedule-table td:first-child,
+.table-wrapper td:first-child,
+.project-card-button,
+a.btn,
+.btn {
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace !important;
+}
+
+// ============================================
+// LAYOUT & CARDS
+// ============================================
+html,
+body,
+.page-wrapper,
+.main-wrapper,
+.main-content-wrap,
+.main-content,
+main,
+#main-content {
+  background-color: #FBFAF8 !important;
+}
+
+.site-header,
+.main-header,
+.site-nav-header {
+  background-color: #FBFAF8 !important;
+}
+
+.animated-project-card,
+#instructors .staffer-card,
+.staffer-card,
+.card,
+.module,
+.module-body,
+.module-content,
+.schedule,
+.schedule-table-wrapper,
+.table-wrapper,
+.schedule-table,
+.grading-breakdown,
+.main-content table,
+.main-content .table-wrapper table,
+dl,
+.main-content dl {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  border-radius: 8px !important;
+}
+
+.card *,
+.module *,
+.table-wrapper tr,
+.schedule-table tr,
+.main-content table tr,
+.table-wrapper td,
+.schedule-table td,
+.main-content table td,
+.table-wrapper th,
+.schedule-table th,
+.main-content table th,
+dl dt,
+dl dd,
+.main-content dl dt,
+.main-content dl dd {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+}
+
+.animated-project-card {
+  border: 1px solid #EAEAEA !important;
+  border-radius: 14px !important;
+  padding: 1.4rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease !important;
+
+  &:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08) !important;
+    border-color: #D1D5DB !important;
+  }
+}
+
+.project-card-title {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 0.96rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: #111827 !important;
+  margin: 0 0 0.5rem 0 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.project-card-desc {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 0.82rem !important;
+  color: #6B7280 !important;
+  line-height: 1.4 !important;
+  margin: 0 0 1.25rem 0 !important;
+}
+
+.instructor-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.instructor-card {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 16px !important;
+  padding: 2rem 1.5rem !important;
+  text-align: center !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.instructor-card-title {
+  margin: 0 0 0.35rem 0 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  color: #111827 !important;
+}
+
+.instructor-card-role {
+  color: #6b7280 !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+}
+
+.instructor-card-email,
+.instructor-card-email a,
+.instructor-card a {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.9rem !important;
+  color: #543290 !important;
   text-decoration: none !important;
-  white-space: nowrap !important;
-  cursor: pointer !important;
+}
+
+// ============================================
+// HEADER & NAVIGATION
+// ============================================
+.site-header,
+.main-header,
+.site-nav-header,
+.nav-branding-title,
+.site-header .aux-nav a,
+.main-header .aux-nav a,
+.search-input-wrap,
+.search-input {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+.nav-branding-title,
+.site-title {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 400 !important;
+  color: #374151 !important;
+  text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
-  color: $brand-charcoal !important; 
+  gap: 0.35rem !important;
+
+  strong,
+  b {
+    font-weight: 700 !important;
+    color: #111827 !important;
+  }
+}
+
+.nav-branding-title,
+a.nav-branding-title {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 1.05rem !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+
+  .course-code {
+    font-weight: 700 !important;
+    color: #111827 !important;
+  }
+
+  .course-desc {
+    font-weight: 400 !important;
+    color: #4b5563 !important;
+  }
+}
+
+.main-header .search,
+.search,
+.custom-compact-search {
+  position: relative !important;
+  width: 220px !important;
+  max-width: 220px !important;
+  margin: 0 auto 0 2rem !important;
+}
+
+.search-input-wrap {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 36px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 9999px !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+}
+
+.search-label,
+.search-input-wrap .search-label,
+.search-button,
+button[aria-label="Search"],
+.main-header .search-button {
+  position: absolute !important;
+  left: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: transparent !important;
   background-color: transparent !important;
-  margin-right: auto !important; 
-  padding: 0.5rem 1rem !important;
-  border-radius: 4px !important;
-  transition: all 0.2s ease !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  color: #6B7280 !important;
+  fill: #6B7280 !important;
+
+  svg,
+  .search-icon {
+    width: 15px !important;
+    height: 15px !important;
+    fill: #6b7280 !important;
+    color: #6b7280 !important;
+  }
 }
 
-.nav-branding-title:hover {
-  background-color: #f5f5f5 !important;
-  color: #000000 !important;
+.search-icon,
+.search-label svg {
+  width: 15px !important;
+  height: 15px !important;
+  fill: #6b7280 !important;
+  color: #6b7280 !important;
 }
 
-/* Right-side Nav Links (Warm Gold) */
+.search-input,
+.search-input-wrap .search-input {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 0.88rem !important;
+  color: #374151 !important;
+  padding: 0 14px 0 36px !important;
+  box-sizing: border-box !important;
+  line-height: normal !important;
+}
+
+.aux-nav-list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.aux-nav-list-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom-nav-btn,
 .site-header .aux-nav a,
 .main-header .aux-nav a,
 .site-header .aux-nav .site-button,
 .main-header .aux-nav .site-button,
-.aux-nav-list-item a {
-  color: $brand-gold !important; 
-  font-weight: 600 !important;
+.aux-nav-list-item a,
+.aux-nav a,
+.site-button.nav-link-item {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-weight: 500 !important;
   font-size: 0.95rem !important;
+  color: #4B5563 !important;
   text-decoration: none !important;
-  border: none !important; 
   background: transparent !important;
-  padding: 0.5rem 1rem !important;
-  transition: all 0.2s ease !important;
-}
-
-.site-header .aux-nav a:hover,
-.main-header .aux-nav a:hover,
-.site-header .aux-nav .site-button:hover,
-.main-header .aux-nav .site-button:hover,
-.aux-nav-list-item a:hover {
-  background-color: $brand-gold-subtle !important; 
-  color: $brand-gold-hover !important; 
+  padding: 0.35rem 0 !important;
+  margin: 0 0.85rem !important;
+  border-radius: 0 !important;
   border: none !important;
+  border-bottom: 2px solid transparent !important;
+  transition: color 0.2s ease, border-color 0.2s ease !important;
+
+  &:hover {
+    background: transparent !important;
+    color: #111827 !important;
+    border-bottom: 2px solid #D1D5DB !important;
+  }
+
+  &.active,
+  &.active-page,
+  &[aria-current="page"],
+  &.nav-active {
+    color: $brand-gold !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid $brand-gold !important;
+    background: transparent !important;
+  }
 }
 
-.main-header, .site-header {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100% !important;
+.search-button,
+.site-header .search-button,
+.main-header .search-button,
+.search-label,
+button[aria-label="Search"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #6B7280 !important;
+  fill: #6B7280 !important;
+
+  &:hover {
+    background-color: transparent !important;
+    color: #111827 !important;
+  }
 }
 
-/* ============================================
-   2. CONTENT LINKS: BALANCED MID-PURPLE
-   ============================================ */
+.search-input-wrap,
+.search-box {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 9999px !important;
+}
 
+// ============================================
+// SCHEDULE & GRADING
+// ============================================
+.schedule a,
+.schedule-table a,
+.table-wrapper a,
+.main-content dl a,
+#syllabus a:not(.btn):not(.btn-blueprint) {
+  color: #4E3486 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #D97706 !important;
+    text-decoration: underline !important;
+  }
+}
+
+strong.label,
+.label,
+[class*="label"],
+.main-content strong.label,
+.main-content .badge,
+.main-content span.badge,
+.badge-purple,
+.badge-blue,
+.label-blue,
+.label-teal,
+[class*="badge-purple"],
+[class*="badge-blue"],
+[class*="label-blue"],
+[class*="label-teal"] {
+  background-color: $brand-purple !important;
+  color: #ffffff !important;
+  padding: 0.3em 0.6em !important;
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.badge-red,
+.label-red,
+[class*="badge-red"],
+[class*="label-red"],
+.main-content strong.label-red {
+  background-color: $brand-gold !important;
+  color: #ffffff !important;
+}
+
+// ============================================
+// BUTTONS & FILTERS
+// ============================================
 .main-content a,
 .main-content td a,
 .table-wrapper td a,
 td a,
 p a {
-  color: $brand-purple !important; 
+  color: $brand-purple !important;
   text-decoration: none !important;
 }
 
@@ -297,10 +688,6 @@ p a:hover {
   text-decoration: underline !important;
 }
 
-/* ============================================
-   3. BUTTONS & PROJECT ACTIONS
-   ============================================ */
-
 a.btn,
 .main-content .btn,
 #projects .project-card a,
@@ -310,7 +697,7 @@ a.btn-blueprint,
 .main-content a.btn-blueprint,
 .project-card-button {
   background-color: $brand-purple !important;
-  color: #ffffff !important; 
+  color: #ffffff !important;
   border: 1px solid $brand-purple !important;
   padding: 0.5rem 1rem !important;
   border-radius: 4px !important;
@@ -321,7 +708,7 @@ a.btn-blueprint,
   transition: background-color 0.2s ease, border-color 0.2s ease !important;
 }
 
-a.btn-blueprint:link, 
+a.btn-blueprint:link,
 a.btn-blueprint:visited {
   background-color: $brand-purple !important;
   border-color: $brand-purple !important;
@@ -352,44 +739,6 @@ a.btn-blueprint:active,
   border: none !important;
 }
 
-/* ============================================
-   4. SCHEDULE / SYLLABUS TAGS & BADGES
-   ============================================ */
-
-/* All Schedule Due Date Tags, Pills & Labels */
-strong.label,
-.label,
-[class*="label"],
-.main-content strong.label,
-.main-content .badge,
-.main-content span.badge,
-.badge-purple,
-.badge-blue,
-.label-blue,
-.label-teal,
-[class*="badge-purple"],
-[class*="badge-blue"],
-[class*="label-blue"],
-[class*="label-teal"] {
-  background-color: $brand-purple !important;
-  color: #ffffff !important;
-  padding: 0.3em 0.6em !important;
-  border-radius: 4px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.03em !important;
-}
-
-/* Alert / Warning Badges & Labels (Warm Gold) */
-.badge-red, 
-.label-red,
-[class*="badge-red"],
-[class*="label-red"],
-.main-content strong.label-red {
-  background-color: $brand-gold !important;
-  color: #ffffff !important;
-}
-
-/* Framework Button Classes */
 .main-content .btn-purple,
 .btn-purple,
 a.btn-purple,
@@ -407,10 +756,6 @@ a.btn-purple:hover {
   border-color: $brand-purple-dark !important;
 }
 
-// ============================================
-// FULL SYLLABUS PDF BUTTON: WARM GOLD
-// ============================================
-
 a[href*="docs.google.com"].btn-blueprint,
 a[href*="docs.google.com"].btn,
 #syllabus a.btn-blueprint,
@@ -418,7 +763,14 @@ a[href*="docs.google.com"].btn,
   background-color: $brand-gold !important;
   border-color: $brand-gold !important;
   color: #ffffff !important;
-  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+  font-size: 0.78rem !important;
+  padding: 0.35rem 0.85rem !important;
+  line-height: 1.2 !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease !important;
 
   &:hover,
   &:focus,
@@ -426,5 +778,152 @@ a[href*="docs.google.com"].btn,
     background-color: $brand-gold-hover !important;
     border-color: $brand-gold-hover !important;
     color: #ffffff !important;
+  }
+
+  svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+}
+
+.sem-toggle-btn {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  padding: 0.35rem 0.95rem !important;
+  border-radius: 9999px !important;
+  border: 1px solid #D1D5DB !important;
+  background-color: #FFFFFF !important;
+  color: #4B5563 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+
+  &:hover {
+    border-color: #D97706 !important;
+    color: #D97706 !important;
+  }
+
+  &.active-sem {
+    background-color: #D97706 !important;
+    border-color: #D97706 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25) !important;
+  }
+}
+
+.project-card-button,
+a.project-card-button,
+.animated-project-card a.btn,
+.animated-project-card .btn {
+  padding: 0.35rem 0.85rem !important;
+  font-size: 0.78rem !important;
+  line-height: 1.2 !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+}
+
+.project-card-button svg,
+.animated-project-card .btn svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.btn-card-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  padding: 0.35rem 0.8rem !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  line-height: 1.2 !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-card-project,
+a.btn-card-project,
+a.btn-card-project:link,
+a.btn-card-project:visited {
+  background-color: #4E3486 !important;
+  border: 1px solid #4E3486 !important;
+  color: #FFFFFF !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #3B2669 !important;
+    border-color: #3B2669 !important;
+    color: #FFFFFF !important;
+  }
+}
+
+.btn-card-paper,
+a.btn-card-paper,
+a.btn-card-paper:link,
+a.btn-card-paper:visited {
+  background-color: transparent !important;
+  border: 1.5px solid #4E3486 !important;
+  color: #4E3486 !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #F6F4FB !important;
+    border-color: #3B2669 !important;
+    color: #3B2669 !important;
+  }
+}
+
+.semester-filter-controls {
+  display: flex !important;
+  gap: 0.65rem !important;
+  margin: 1.25rem 0 1.75rem 0 !important;
+}
+
+.projects-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
+  gap: 1.25rem !important;
+}
+
+// ============================================
+// KEEP JEKYLL / THIRD-PARTY COMPATIBILITY
+// ============================================
+@mixin abstract-card() {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
+  margin: $sp-4 (-$gutter-spacing-sm);
+
+  @include mq(md) {
+    border-radius: $border-radius;
+    margin: $sp-4 0;
+  }
+}
+
+%card {
+  @include abstract-card();
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0 $sp-4;
+  position: relative;
+  word-wrap: break-word;
+
+  >:first-child {
+    border-top: none !important;
+  }
+
+  >:last-child {
+    border-bottom: none !important;
+  }
+
+  .label {
+    border-radius: $border-radius;
+    margin-left: 0;
+    user-select: none;
   }
 }

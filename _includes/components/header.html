@@ -1,13 +1,16 @@
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 <div class="main-header">
+  <a href="{{ '/' | relative_url }}" class="nav-branding-title">
+    <strong class="course-code">BSCI238I</strong>
+    <span class="course-desc">ML for Life Sciences</span>
+  </a>
   
-  <a href="#" class="nav-branding-title">BSCI238I: ML for Life Sciences</a>
-
   {% if site.search_enabled != false %}
-    <div class="search" role="search">
+    <div class="search custom-compact-search" role="search">
       <div class="search-input-wrap">
+        <label for="search-input" class="search-label">
+          <svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg>
+        </label>
         <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}" autocomplete="off">
-        <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
       </div>
       <div id="search-results" class="search-results"></div>
     </div>
@@ -18,7 +21,7 @@
       <ul class="aux-nav-list">
         {% for link in site.aux_links %}
           <li class="aux-nav-list-item">
-            <a href="{{ link[1] }}" class="site-button" {% if site.aux_links_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+            <a href="{{ link[1] }}" class="site-button custom-nav-btn" data-target="{{ link[1] }}">
               {{ link[0] }}
             </a>
           </li>
@@ -26,43 +29,89 @@
       </ul>
     </nav>
   {% endif %}
-
 </div>
 
-<style>
-  /* GLOBAL BULLETPROOF THEME OVERRIDES */
-  
-  /* 1. Force all calendar table links to turn Blueprint Blue */
-  .day-topic a,
-  .day-resources a,
-  .main-content td a,
-  .table-wrapper td a,
-  tr td a {
-      color: #317b91 !important;
-      text-decoration: none !important;
+<script>
+  (function() {
+    const ACTIVE_COLOR = '#d97706';
+    const INACTIVE_COLOR = '#4b5563';
+
+    function styleLink(link, isActive) {
+      if (isActive) {
+        link.style.setProperty('color', ACTIVE_COLOR, 'important');
+        link.style.setProperty('border-bottom', '2px solid ' + ACTIVE_COLOR, 'important');
+        link.style.setProperty('font-weight', '600', 'important');
+      } else {
+        link.style.setProperty('color', INACTIVE_COLOR, 'important');
+        link.style.setProperty('border-bottom', '2px solid transparent', 'important');
+        link.style.setProperty('font-weight', '500', 'important');
+      }
+    }
+
+    function initNavHighlight() {
+      const links = Array.from(document.querySelectorAll('.custom-nav-btn'));
+      if (!links.length) return;
+
+      function highlight(selected) {
+        links.forEach(link => styleLink(link, link === selected));
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', function() {
+          highlight(this);
+        });
+      });
+
+      function syncHash() {
+        const hash = (window.location.hash || '').toLowerCase();
+        let matched = null;
+
+        if (hash) {
+          matched = links.find(link => {
+            const target = (link.getAttribute('data-target') || link.getAttribute('href') || '').toLowerCase();
+            return target === hash || target.endsWith(hash);
+          });
+        }
+
+        if (!matched) {
+          matched = links.find(link => link.textContent.trim().toLowerCase() === 'home') || links[0];
+        }
+
+        highlight(matched);
+      }
+
+      window.addEventListener('hashchange', syncHash);
+      syncHash();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavHighlight);
+    } else {
+      initNavHighlight();
+    }
+  })();
+</script>
+
+<script>
+  const activeSemesters = new Set(['fall-2025', 'spring-2026']);
+
+  function toggleSemester(sem) {
+    const btn = document.querySelector(`.sem-toggle-btn[data-sem="${sem}"]`);
+
+    if (activeSemesters.has(sem)) {
+      if (activeSemesters.size > 1) {
+        activeSemesters.delete(sem);
+        btn.classList.remove('active-sem');
+      }
+    } else {
+      activeSemesters.add(sem);
+      btn.classList.add('active-sem');
+    }
+
+    const cards = document.querySelectorAll('.animated-project-card');
+    cards.forEach(card => {
+      const cardSem = card.getAttribute('data-semester');
+      card.style.display = activeSemesters.has(cardSem) ? 'flex' : 'none';
+    });
   }
-  
-  /* 2. Force hover state for calendar links */
-  .day-topic a:hover,
-  .day-resources a:hover,
-  tr td a:hover {
-      color: #215666 !important;
-      text-decoration: underline !important;
-  }
-  
-  /* 3. Force purple calendar badges (SECTION and LAB) to turn Blueprint Blue */
-  .badge-purple,
-  [class*="badge-purple"],
-  .badge,
-  span.badge {
-      background-color: #317b91 !important;
-      color: #ffffff !important;
-  }
-  
-  /* 4. Ensure HW Due badges stay their intentional deadline red */
-  .badge-red,
-  [class*="badge-red"] {
-      background-color: #c6513e !important;
-      color: #ffffff !important;
-  }
-</style>
+</script>
