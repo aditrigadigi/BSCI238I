@@ -417,7 +417,7 @@ dl dd,
 // ============================================
 .site-header,
 .main-header,
-.site-nav-header,
+.site-nav-header, 
 .nav-branding-title,
 .site-header .aux-nav a,
 .main-header .aux-nav a,
@@ -657,6 +657,7 @@ strong.label,
   border-radius: 4px !important;
   font-weight: 700 !important;
   letter-spacing: 0.03em !important;
+  font-size: 0.7rem !important;
 }
 
 .badge-red,
@@ -926,4 +927,36 @@ a.btn-card-paper:visited {
     margin-left: 0;
     user-select: none;
   }
+}
+// =========================================================
+// ISOLATED FIRST-COLUMN MONOSPACE & SECOND-COLUMN INTER
+// =========================================================
+
+// 1. First Column ONLY: Monospaced (dt and table first col)
+.main-content table th:first-child,
+.main-content table td:first-child,
+.table-wrapper table th:first-child,
+.table-wrapper table td:first-child,
+.schedule table td:first-child,
+dl dt,
+.main-content dl dt {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: #4B5563 !important;
+  white-space: nowrap !important;
+}
+
+// 2. Second Column & All Data Cells: Force standard Inter body font
+.main-content table td:nth-child(2),
+.main-content table th:nth-child(2),
+.table-wrapper table td:nth-child(2),
+.table-wrapper table th:nth-child(2),
+dl dd,
+dl dd *,
+.main-content dl dd,
+.main-content dl dd * {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: 0.96rem !important;
+
 }

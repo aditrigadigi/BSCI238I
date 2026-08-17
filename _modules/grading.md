@@ -12,7 +12,7 @@ title:  <br> Grading Breakdown
 
 30%
 : <span style="color: #D97706;">**Final Paper/Project**</span>  <br> Choice between two final projects: (1) A report presenting a <br> biological question of interest and quantitative analysis of a <br> relevant dataset using machine learning techniques, or <br> (2) A review paper analyzing 2 academic research articles <br> about a recent advancement in machine learning for <br> biological/medical applications. 
-  : 
+  : <br>  1 total
 
 10%
 : <span style="color: #D97706;">**Participation**</span>  <br> Short attendance surveys completed after class, each worth 1% <br> of the final grade (with a maximum of 10%). Unexcused <br>  absences will result in deductions from this grade.
