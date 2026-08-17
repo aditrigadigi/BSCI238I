@@ -45,7 +45,7 @@ Through lectures and guided projects, students will gain an understanding of how
 
  <br> 
 
-[View the Full Syllabus (PDF)](https://docs.google.com/document/d/16saZJkMiUvnaw4p9VcXmwhjTT6Aip9h54B6hkIj-rv4/edit?usp=sharing){: .btn .btn-blueprint }
+[View the Full Syllabus](https://docs.google.com/document/d/16saZJkMiUvnaw4p9VcXmwhjTT6Aip9h54B6hkIj-rv4/edit?usp=sharing){: .btn .btn-blueprint }
 
 </section>
 
@@ -112,11 +112,11 @@ View final projects made by past students!
 
     <div>
       {% if project.type == "paper" %}
-        <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-paper">
+        <a href="{{ project.link | relative_url }}" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-paper">
           View Paper &rarr;
         </a>
       {% else %}
-        <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-project">
+        <a href="{{ project.link | relative_url }}" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-project">
           View Project &rarr;
         </a>
       {% endif %}

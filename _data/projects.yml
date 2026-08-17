@@ -21,34 +21,34 @@
 
 - title: "Machine Learning for Biological Datasets"
   description: "Makayla Vu · Fall 2025"
-  link: "/assets/pdf/Makayla Vu - Machine Learning for Biological Datasets.pdf"
+  link: "/assets/pdf/Makayla%20Vu%20-%20Machine%20Learning%20for%20Biological%20Datasets.pdf"
   type: "paper"
   semester: "fall-2025"
 
-
 - title: "Advancements in Machine Learning for Cancer Genomics"
   description: "Gabriella Winig · Fall 2025"
-  link: "/assets/pdf/Gabriella Winig - Advancements in Machine Learning for Cancer Genomics.pdf"
+  link: "/assets/pdf/Gabriella%20Winig%20-%20Advancements%20in%20Machine%20Learning%20for%20Cancer%20Genomics.pdf"
   type: "paper"
   semester: "fall-2025"
 
 - title: "Interpreting Non-Coding Genetic Variation with Machine Learning"
   description: "Fall 2025"
-  link: "/assets/pdf/Interpreting Non-Coding Genetic Variation with Machine Learning.pdf"
+  link: "/assets/pdf/Interpreting%20Non-Coding%20Genetic%20Variation%20with%20Machine%20Learning.pdf"
   type: "paper"
   semester: "fall-2025"
 
 - title: "X-Ray Image Classification for COVID-19 Diagnosis"
   description: "Fall 2025"
-  link: "/assets/pdf/X-Ray Image Classification for COVID-19 Diagnosis.pdf"
+  link: "/assets/pdf/X-Ray%20Image%20Classification%20for%20COVID-19%20Diagnosis.pdf"
   type: "project"
   semester: "fall-2025"
+
 # ==========================================
 # Spring 2026 Projects
 # ==========================================
 - title: "Comparing Supervised Transformers and Unsupervised Diffusion Models in RNA Structure Prediction"
   description: "Madoc Watson · Spring 2026"
-  link: "/assets/pdf/Madoc Watson - Comparing Supervised Transformers and Unsupervised.pdf"
+  link: "/assets/pdf/Madoc%20Watson%20-%20Comparing%20Supervised%20Transformers%20and%20Unsupervised.pdf"
   type: "paper"
   semester: "spring-2026"
 
@@ -60,13 +60,13 @@
 
 - title: "ML Algorithms for Taxonomic Identification of Small Marine Organisms"
   description: "Nicole Guzman · Spring 2026"
-  link: "/assets/pdf/Nicole_Guzman - ML Algorithms for Taxonomic Identification of Small Marine Organisms.pdf"
+  link: "/assets/pdf/Nicole_Guzman%20-%20ML%20Algorithms%20for%20Taxonomic%20Identification%20of%20Small%20Marine%20Organisms.pdf"
   type: "paper"
   semester: "spring-2026"
 
 - title: "Applications of Machine Learning to Improve Clinical Patient Outcomes"
   description: "Maria Chen · Spring 2026"
-  link: "/assets/pdf/Maria_Chen_Applications of Machine Learning to Improve Clinical Patient Outcomes.pdf"
+  link: "/assets/pdf/Maria_Chen_Applications%20of%20Machine%20Learning%20to%20Improve%20Clinical%20Patient%20Outcomes.pdf"
   type: "paper"
   semester: "spring-2026"
 
@@ -78,12 +78,12 @@
 
 - title: "Using AI to Analyze the Physical Outcomes of Viral Infection"
   description: "Matthew Quintanilla · Spring 2026"
-  link: "/assets/pdf/Matthew Qunitanilla - Using AI to Analyze the Physical Outcomes of Viral Infection.pdf"
+  link: "/assets/pdf/Matthew%20Qunitanilla%20-%20Using%20AI%20to%20Analyze%20the%20Physical%20Outcomes%20of%20Viral%20Infection.pdf"
   type: "paper"
   semester: "spring-2026"
 
 - title: "Ovarian Cancer Classification Project"
-  description: "Claire Zhu ·  Spring 2026"
+  description: "Claire Zhu · Spring 2026"
   link: "https://colab.research.google.com/drive/1tV6RmaAoBOzlyLmsuxVfhMI_HK_IFVF2?usp=sharing"
   type: "project"
   semester: "spring-2026"
@@ -104,7 +104,7 @@
 - title: "Sleep State Classification Using EEG Data"
   authors: ""
   description: "Spring 2026"
-  link: "/assets/pdf/Sleep State Classification Using EEG Data.pdf"
+  link: "/assets/pdf/Sleep%20State%20Classification%20Using%20EEG%20Data.pdf"
   type: "paper"
   semester: "spring-2026"
 
@@ -118,6 +118,6 @@
 - title: "Deep Learning for Predicting Protein Maps and Biomarkers from Histopathology Images"
   authors: ""
   description: "Spring 2026"
-  link: "/assets/pdf/Deep Learning for Predicting Protein Maps and Biomarkers from Histopathoogy Images.docx - Google Docs.pdf"
+  link: "/assets/pdf/Deep%20Learning%20for%20Predicting%20Protein%20Maps%20and%20Biomarkers%20from%20Histopathoogy%20Images.docx%20-%20Google%20Docs.pdf"
   type: "paper"
   semester: "spring-2026"
